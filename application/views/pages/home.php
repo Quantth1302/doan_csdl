@@ -1,11 +1,11 @@
 
 <html>
 	<head>
-		<?php $this->load->view('pages/head');?>
+		<?php $this->load->view('pages/layout/head');?>
 	</head>
 <body>
 	<header class="header_area sticky-header">
-		<?php $this->load->view('pages/header');?>
+		<?php $this->load->view('pages/layout/header');?>
 	</header>
 
 	<!-- start banner Area -->
@@ -978,7 +978,7 @@
 	<!-- End related-product Area -->
 
 	<footer class="footer-area section_gap">
-		<?php $this->load->view('pages/footer');?>
+		<?php $this->load->view('pages/layout/footer');?>
 	</footer>	
 </body>
 

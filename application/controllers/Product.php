@@ -2,7 +2,7 @@
 
 class Product extends CI_Controller{
 
-    function view(){
+    function index(){
         $this->load->view('pages/shop/single_product');
     }
 }

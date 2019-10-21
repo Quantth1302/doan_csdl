@@ -1,10 +1,10 @@
-<html>
-    <head>
-        <?php $this->load->view('pages/head');?>
-    </head>
-    <body>
-        <div class="body">
-            This's Admin page
-        </div>
-    </body>
-</html>
+<?php
+
+class Home extends CI_Controller{
+
+    function index(){
+        
+        $this->load->view('pages/admin/home');
+    }
+}
+?>

@@ -1,9 +1,9 @@
 <?php
 	class Shop extends CI_Controller{
-		public function view($shop = 'shop'){
-			if(!file_exists(APPPATH.'views/pages/'.$shop.'.php')){
+		public function index($shop = 'shop'){
+			if(!file_exists(APPPATH.'views/pages/shop/'.$shop.'.php')){
 				show_404();
 			}
-			$this->load->view('pages/'.$shop);
+			$this->load->view('pages/shop/'.$shop);
 		}
 	}

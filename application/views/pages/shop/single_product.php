@@ -1,6 +1,6 @@
 <html>
     <head>
-        <?php $this->load->view('pages/head');?>
+        <?php $this->load->view('pages/layout/head');?>
     </head>
     <body>
         <header class="header_area sticky-header">
@@ -533,7 +533,7 @@
 	</section>
 	<!-- End related-product Area -->
         <footer class="footer-area section_gap">
-            <?php $this->load->view('pages/footer');?>
+            <?php $this->load->view('pages/layout/footer');?>
         </footer>
     </body>
 </html>

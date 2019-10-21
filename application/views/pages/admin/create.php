@@ -1,6 +1,6 @@
 <html>
     <head>
-        <?php $this->load->view('pages/head');?>
+        <?php $this->load->view('pages/layout/head');?>
     </head>
     <body>       
         <div class="container">

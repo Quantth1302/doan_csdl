@@ -1,7 +1,7 @@
 <?php
     class Cart extends CI_Controller{
 
-        function view(){
+        function index(){
             $this->load->view('pages/shop/shoppingcart');
         }
     }

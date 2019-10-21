@@ -1,6 +1,6 @@
 <html>
     <head>
-		<?php $this->load->view('pages/head');?>
+		<?php $this->load->view('pages/layout/head');?>
     </head>
     <body id="category">
         <!-- header -->
@@ -235,7 +235,7 @@
 											<span class="lnr lnr-sync"></span>
 											<p class="hover-text">compare</p>
 										</a>
-										<a href="<?php echo base_url('product/view')?>" class="social-info">
+										<a href="<?php echo base_url('product')?>" class="social-info">
 											<span class="lnr lnr-move"></span>
 											<p class="hover-text">view more</p>
 										</a>
@@ -573,7 +573,7 @@
 
         <!-- footer -->
         <footer class="footer-area section_gap">
-            <?php $this->load->view('pages/footer');?>
+            <?php $this->load->view('pages/layout/footer');?>
         </footer>	
     </body>
 </html>
