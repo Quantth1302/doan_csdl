@@ -1040,10 +1040,10 @@ h1, h2, h3, h4, h5, h6 {
     .header_area .navbar .nav .nav-item {
       margin-right: 45px; }
       .header_area .navbar .nav .nav-item .nav-link {
-        text-transform: uppercase;
+        text-transform: inherit;
         padding: 0px;
         display: inline-block;
-        font-size: 17px;
+        font-size: 12px;
         font-weight: 500;
         color: #222222; }
         @media (min-width: 991px) {
@@ -5791,21 +5791,3 @@ label {
     color: #ffba00; }
 
 /*# sourceMappingURL=main.css.map */
-.create__form__inner{
-        width: 500px;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-        padding: 50px;
-        margin-top: 50px;
-        margin-bottom: 80px;
-        box-shadow: 2px 8px 35px -1px;
-}
-.create__form__inner h3{
-        font-family: "Roboto",sans-serif;
-        font-size: 30px;
-        margin-bottom: 30px;
-}
-.create__form__inner .custom-btn{
-        padding: 0 50px;
-}
