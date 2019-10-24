@@ -3,14 +3,17 @@
 
 		function __construct(){
 			parent:: __construct();
-			$this->load->model('Pet_model', 'm');
+			$this->load->model('Pet_model');
 		}
 
 		public function index($page = 'home'){
 			if(!file_exists(APPPATH.'views/pages/'.$page.'.php')){
 				show_404();
 			}
-			$data['pet'] = $this->m->getLastestPet();
+			$data = array();
+			$data['pets'] = $this->Pet_model->getLastestPet();
+			$data['pets_sales'] = $this->Pet_model->getPetForSales();
+			$data['pets_sales_week'] = $this->Pet_model->getPetSaleForWeek();
 			$this->load->view('pages/'.$page, $data);
 		}
 	}
