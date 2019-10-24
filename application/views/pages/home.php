@@ -2,6 +2,11 @@
 <html>
 	<head>
 		<?php $this->load->view('pages/layout/head');?>
+		<style>
+			.img-h {
+				height: 200px;
+			}
+		</style>
 	</head>
 <body>
 	<header class="header_area sticky-header">
@@ -58,6 +63,18 @@
 		</div>
 	</section>
 	<!-- End banner Area -->
+
+	<!-- <?php 
+			if($pet){
+				foreach($pet as $p){
+		?>
+			<tr>
+				<td><?php echo $p->id; ?></td>
+			</tr>
+		<?php
+				}
+			}
+		?> -->
 
 	<!-- start features Area -->
 	<section class="features-area section_gap">
@@ -117,7 +134,7 @@
 						<div class="col-lg-8 col-md-8">
 							<div class="single-deal">
 								<div class="overlay"></div>
-								<img class="img-fluid w-100" src="<?php echo base_url().'assets/img/category/c1.jpg';?>" alt="">
+								<img class="img-fluid img-h w-100" src="<?php echo base_url().'assets/img/category/c1.jpg';?>" alt="">
 								<a href="<?php echo base_url().'assets/img/category/c1.jpg" class="img-pop-up';?>" target="_blank">
 									<div class="deal-details">
 										<h6 class="deal-title">Sneaker for Sports</h6>
@@ -128,7 +145,7 @@
 						<div class="col-lg-4 col-md-4">
 							<div class="single-deal">
 								<div class="overlay"></div>
-								<img class="img-fluid w-100" src="<?php echo base_url().'assets/img/category/c2.jpg';?>" alt="">
+								<img class="img-fluid img-h w-100" src="<?php echo base_url().'assets/img/category/c2.jpg';?>" alt="">
 								<a href="<?php echo base_url().'assets/img/category/c2.jpg';?>" class="img-pop-up" target="_blank">
 									<div class="deal-details">
 										<h6 class="deal-title">Sneaker for Sports</h6>
@@ -139,7 +156,7 @@
 						<div class="col-lg-4 col-md-4">
 							<div class="single-deal">
 								<div class="overlay"></div>
-								<img class="img-fluid w-100" src="<?php echo base_url().'assets/img/category/c3.jpg';?>" alt="">
+								<img class="img-fluid img-h w-100" src="<?php echo base_url().'assets/img/category/c3.jpg';?>" alt="">
 								<a href="<?php echo base_url().'assets/img/category/c3.jpg';?>" class="img-pop-up" target="_blank">
 									<div class="deal-details">
 										<h6 class="deal-title">Product for Couple</h6>
@@ -150,7 +167,7 @@
 						<div class="col-lg-8 col-md-8">
 							<div class="single-deal">
 								<div class="overlay"></div>
-								<img class="img-fluid w-100" src="<?php echo base_url().'assets/img/category/c4.jpg';?>" alt="">
+								<img class="img-fluid img-h w-100" src="<?php echo base_url().'assets/img/category/c4.jpg';?>" alt="">
 								<a href="<?php echo base_url().'assets/img/category/c4.jpg';?>" class="img-pop-up" target="_blank">
 									<div class="deal-details">
 										<h6 class="deal-title">Sneaker for Sports</h6>
