@@ -740,7 +740,7 @@ aside.left-panel {
   max-width: 83px;
   width: 83px; }
   .open aside.left-panel .navbar .navbar-header {
-    padding: 0; }
+    padding-top: 7px; }
   .open aside.left-panel .navbar .navbar-brand {
     display: none; }
     .open aside.left-panel .navbar .navbar-brand.hidden {
@@ -2504,3 +2504,30 @@ footer.site-footer {
     right: 20px !important; }
 
 /*# sourceMappingURL=style.css.map */
+/* Edit  */
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+.hvr-grow:hover{
+  transform: scale(1.1);
+}
+.header-left{
+  padding-top: 10px !important;
+}
+.navbar-header{
+  padding-top: 7px !important;
+}
+.badge-complete{
+    cursor: pointer;
+}
+.badge-pending{
+  cursor: pointer;
+  
+}

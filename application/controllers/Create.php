@@ -3,7 +3,7 @@
     class Create extends CI_Controller{
 
         public function index(){
-            $this->load->view('pages/admin/create');
+            $this->load->view('pages/admin/createAccount');
         }
     }
 ?>
