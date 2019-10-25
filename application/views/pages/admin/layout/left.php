@@ -10,8 +10,8 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Quản lý thú cưng</a>
                         <ul class="sub-menu children dropdown-menu">                            
                             <li><i class="fa fa-puzzle-piece"></i><a href="<?php echo base_url('admin/product')?>">Thông tin chung</a></li>
-                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">...</a></li>
-                            <li><i class="fa fa-bars"></i><a href="ui-tabs.html">...</a></li>
+                            <li><i class="fa fa-id-badge"></i><a href="ui-badges.html">Phụ kiện</a></li>
+                            <li><i class="fa fa-bars"></i><a href="ui-tabs.html">Thức ăn</a></li>
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
