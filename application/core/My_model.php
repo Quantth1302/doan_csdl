@@ -7,6 +7,7 @@ class MY_Model extends CI_Model {
 	// Key chinh cua table
 	var $key = 'id';
 	
+	
 	// Order mac dinh (VD: $order = array('id', 'desc))
 	var $order = '';
 	
@@ -81,7 +82,7 @@ class MY_Model extends CI_Model {
 		}else
 		{
 		    //$id = 1,2,3...
-			$where = $this->key . " IN (".$id.") ";
+			$where = strval($this->key . " IN (".$id.") ");
 		}
 	 	$this->del_rule($where);
 		
@@ -126,8 +127,9 @@ class MY_Model extends CI_Model {
 			return FALSE;
 		}
 	 	
-	 	$where = array();
-	 	$where[$this->key] = $id;
+		 $where = array();		
+		 $where[$this->key] = $id;
+		 
 	 	
 	 	return $this->get_info_rule($where, $field);
 	}
