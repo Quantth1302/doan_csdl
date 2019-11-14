@@ -1,16 +1,7 @@
 <html>
     <head>
         <?php $this->load->view('pages/admin/layout/head');?>
-        <script>    
-            $(document).ready(function(){
-                $('a.confirm').click(function(){
-                    if(!confirm('Bạn chắc chắn muốn xóa ?'))
-                    {
-                        return false;
-                    }
-                });
-            })
-        </script>
+        
     </head>
     <body>
         <aside id="left-panel" class="left-panel">
@@ -32,17 +23,16 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="col-sm-8">
+                        <div class="col-sm-8">
                             <div class="page-header float-right">
                                 <div class="page-title">
                                     <ol class="breadcrumb text-right">
-                                        <li><a href="#">Dashboard</a></li>
-                                        <li><a href="#">Table</a></li>
-                                        <li class="active">Data table</li>
+                                        <li><a href="<?php echo base_url('admin')?>">Home</a></li>
+                                        <li class = "active" style="cursor: pointer;">Pets</li>                
                                     </ol>
                                 </div>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>

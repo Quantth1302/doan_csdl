@@ -88,7 +88,7 @@
         jQuery(document).ready(function($) {
             "use strict";
             $('a.confirm').click(function(){
-                if(!confirm('Bạn chắc chắn muốn xóa ?'))
+                if(!confirm('Are you sure you want to delete this product ?'))
                 {
                     return false;
                 }

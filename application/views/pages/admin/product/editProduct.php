@@ -26,9 +26,9 @@
                             <div class="page-header float-right">
                                 <div class="page-title">
                                     <ol class="breadcrumb text-right">
-                                        <li><a href="#">Dashboard</a></li>
-                                        <li><a href="#">Table</a></li>
-                                        <li class="active">Data table</li>
+                                        <li><a href="<?php echo base_url('admin')?>">Home</a></li>
+                                        <li><a href="<?php echo base_url('admin/product')?>">Pets</a></li>
+                                        <li class="active" style="cursor: pointer;">Edit</li>
                                     </ol>
                                 </div>
                             </div>
