@@ -20,7 +20,7 @@ Class Upload extends MY_Controller
            $this->load->library('upload_library');
            $upload_path = 'assets/img/pet';
            $data = $this->upload_library->upload_file($upload_path, 'image_list');
-           pre($data);
+           
         }
         
         $this->data['temp'] = 'admin/upload/upload_file';

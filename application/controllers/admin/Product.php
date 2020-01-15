@@ -5,16 +5,16 @@ class Product extends CI_Controller{
     function __construct(){
         parent:: __construct();
         $this->load->model('Pet_model');
+        $this->load->model('User_model');
     }
 
     function index(){
         $data = array();
-			$data['pets'] = $this->Pet_model->getLastestPet();
-			$data['pets_sales'] = $this->Pet_model->getPetForSales();
-            $data['pets_sales_week'] = $this->Pet_model->getPetSaleForWeek();
-        
-            $message = $this->session->flashdata('message');
-            $this->data['message'] = $message;
+		$data['pets'] = $this->Pet_model->getLastestPet();
+        $data['role'] = $this->User_model->getRoleByUsername($this->session->userdata('login'));
+
+        $message = $this->session->flashdata('message');
+        $this->data['message'] = $message;
 
         $this->data['temp'] = 'admin/product/index';    
         $this->load->view('pages/admin/product/index',$data,$this->data);
@@ -81,13 +81,15 @@ class Product extends CI_Controller{
                 redirect(base_url('admin/product'));
             }
         }
-        // load view den trang admin main
+        $data = array();
+        $data['role'] = $this->User_model->getRoleByUsername($this->session->userdata('login'));
+
         $this->data['temp'] = 'admin/product/create';
-        $this->load->view('pages/admin/product/createProduct',$this->data);
+        $this->load->view('pages/admin/product/createProduct',$data,$this->data);
     }
 
     function edit(){
-        
+       
         $id = $this->uri->rsegment('3');
         $id = strval($id);
         $Pet = $this->Pet_model->get_info($id);
@@ -98,11 +100,10 @@ class Product extends CI_Controller{
             redirect(base_url('admin/product'));
         }
         $this->data['Pet'] = $Pet;
-
         $this->load->library('form_validation');
         $this->load->helper('form');
         if($this->input->post()){
-            $this->form_validation->set_rules('id','id','required|max_length[11]|callback_check_id');
+            $this->form_validation->set_rules('id','id','required|max_length[11]');
 
             //Nhap lieu chinh xacs
             if($this->form_validation->run()){
@@ -143,8 +144,11 @@ class Product extends CI_Controller{
                 redirect(base_url('admin/product'));
             }
         }
+        $Dat = array();
+        $Dat['role'] = $this->User_model->getRoleByUsername($this->session->userdata('login'));
+
         $this->data['temp'] = 'admin/product/edit';
-        $this->load->view('pages/admin/product/editProduct',$this->data);
+        $this->load->view('pages/admin/product/editProduct',$Dat + $this->data);
     }
 
     

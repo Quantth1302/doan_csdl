@@ -3,8 +3,21 @@
         <?php $this->load->view('pages/admin/layout/head');?>
     </head>
     <body>
+    <?php 
+            if ($role) {
+                foreach ($role as $r) {  
+                    $R = $r->role_id;
+                }
+            }                             
+        ?>       
         <aside id="left-panel" class="left-panel">
-            <?php $this->load->view('pages/admin/layout/left')?>
+            <?php
+            if($R == 0){
+                $this->load->view('pages/admin/layout/left');
+            }else{
+                $this->load->view('pages/admin/layout/leftEmployee');
+            }
+            ?>
         </aside>
 
         <div id="right-panel" class="right-panel">

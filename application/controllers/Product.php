@@ -1,11 +1,16 @@
 <?php
 
-class Product extends CI_Controller{
+class Product extends MY_Controller{
 
-    function index(){
-        $this->load->view('pages/shop/single_product');
+    function __construct(){
+        parent:: __construct();
+        $this->load->model('Pet_model');
+        $this->load->model('User_model');
     }
 
+
+
+    
    
 }
 ?>

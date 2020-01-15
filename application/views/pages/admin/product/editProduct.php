@@ -3,8 +3,21 @@
         <?php $this->load->view('pages/admin/layout/head');?>
     </head>
     <body>
+    <?php 
+            if ($role) {
+                foreach ($role as $r) {  
+                    $R = $r->role_id;
+                }
+            }                             
+        ?>       
         <aside id="left-panel" class="left-panel">
-            <?php $this->load->view('pages/admin/layout/left')?>
+            <?php
+            if($R == 0){
+                $this->load->view('pages/admin/layout/left');
+            }else{
+                $this->load->view('pages/admin/layout/leftEmployee');
+            }
+            ?>
         </aside>
 
         <div id="right-panel" class="right-panel">
@@ -70,7 +83,7 @@
                                 <div class="col-12 col-md-9"><input type="text" id="price" value="<?php echo $Pet->price?>" name="price" placeholder="" class="form-control"></div>
                             </div>
                             <!-- special id -->
-                            <div class="row form-group">
+                            <!-- <div class="row form-group">
                                 <div class="col col-md-3"><label for="selectLg" class=" form-control-label">Giống loại</label></div>
                                 <div class="col-12 col-md-9">
                                     <select name="species_id" id="selectLg" class="form-control-lg form-control" value="<?php echo $Pet->species_id?>">
@@ -79,7 +92,7 @@
                                         <option value="2">Chim</option>
                                     </select>
                                 </div>
-                            </div>
+                            </div> -->
                         <!-- gender -->
                             <div class="row form-group">
                                 <div class="col col-md-3"><label class=" form-control-label">Gender</label></div>
@@ -125,7 +138,7 @@
             </div>
         </div>
         <script>
-            var check = $Pet->gender;
+            var check = <?php echo $Pet->gender?>;
             if(check == 1){
                 $('#inline-radio').checked ="checked";
             }else{

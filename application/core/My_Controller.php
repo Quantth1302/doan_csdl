@@ -7,6 +7,7 @@ class MY_Controller extends CI_Controller{
     function __construct(){
         // ke thua tu CI_Controller
         parent::__construct();
+        $this->load->library(array('form_validation','session'));
 
         $controller = $this->uri->segment(1);
         switch($controller){

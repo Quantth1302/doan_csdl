@@ -3,14 +3,29 @@
         <?php $this->load->view('pages/admin/layout/head')?>
     </head>
     <body>
+        <?php 
+            if ($role) {
+                foreach ($role as $r) {  
+                    $R = $r->role_id;
+                }
+            }                             
+        ?>       
         <aside id="left-panel" class="left-panel">
-            <?php $this->load->view('pages/admin/layout/left')?>
+            <?php
+            if($R == 0){
+                $this->load->view('pages/admin/layout/left');
+            }else{
+                $this->load->view('pages/admin/layout/leftEmployee');
+            }
+            ?>
         </aside>
         
         <div id="right-panel" class="right-panel">
             <header id="header" class="header">
                 <?php $this->load->view('pages/admin/layout/header');?>
             </header>
+           
+            <li><p class="text-center" style="padding-top: 15px;">
             <div class="container" style="padding: 30px 30px 0 30px;">
                 <div class="row">
                     <div class="col-lg-3 col-md-6">
@@ -22,6 +37,7 @@
                                     </div>
                                     <div class="stat-content">
                                         <div class="text-left dib">
+                                            
                                             <div class="stat-text">$<span class="count">23569</span></div>
                                             <div class="stat-heading">Revenue</div>
                                         </div>
@@ -30,7 +46,7 @@
                             </div>
                         </div>
                     </div>
-
+                   
                     <div class="col-lg-3 col-md-6">
                         <div class="card">
                             <div class="card-body">
@@ -147,7 +163,9 @@
         <script type="text/javascript">
         $(document).ready(function() {
           $('#bootstrap-data-table-export').DataTable();
-      } );
-  </script>
+          alert ('Hello word');
+        });
+        </script>
+      
     </body>
 </html>

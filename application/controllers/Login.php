@@ -2,20 +2,39 @@
 
 class Login extends MY_Controller{
 
+    
+    function __construct()
+    {
+        parent::__construct();
+        $this->load->library(array('form_validation','session'));
+        $this->load->helper(array('form', 'url', 'cookie'));     
+
+        $this->load->model('User_model');
+    }
+
     function index(){   
       
-        $this->load->library('form_validation');
-        $this->load->helper('form');       
-        if($this->input->post()){
+        if($this->session->userdata('login')){
+           
+            redirect(base_url('admin'));
+            
+        }else{
+            
+            if($this->input->post()){
 
-            $this->form_validation->set_rules('login','login','callback_check_login');
-            if($this->form_validation->run()){
+                $this->form_validation->set_rules('login','Login','callback_check_login');
+                if($this->form_validation->run()){
 
-                $this->session->set_userdata('login',true);// bien kiem tra login
-                redirect(base_url('admin'));
+                    $info = $this->input->post('username');
+                   
+                    $this->session->set_userdata('login',$info);
+
+                    redirect(base_url('admin',$info));
+                }
             }
-        }
-        $this->load->view('pages/admin/login');
+            
+            $this->load->view('pages/admin/login');
+        }     
     }
 
     function check_login(){
@@ -24,14 +43,24 @@ class Login extends MY_Controller{
         $password = $this->input->post('password');
         // $password = md5($password);
 
-        $this->load->model('User_model');
+        
         $where = array('username'=>$username, 'password'=>$password);
 
         if($this->User_model->check_exists($where)){
 
             return true;
         }
-        $this->form_validation->set_message(__FUNCTION__, 'Username hoăc password không chính xác');
+        $this->form_validation->set_message(__FUNCTION__, 'Username or Password not exists !!!');
         return false;      
+    }
+    function logout(){
+
+        if($this->session->userdata('login')){
+
+            $this->session->unset_userdata('login');
+            session_unset('login');
+            session_destroy();
+        }
+        redirect(base_url('login'));
     }
 }

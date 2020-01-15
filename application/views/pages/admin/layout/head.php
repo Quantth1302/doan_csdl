@@ -22,7 +22,13 @@
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css">
+  
+    
+
+ 
    <style>
+       
     #weatherWidget .currentDesc {
         color: #ffffff!important;
     }
@@ -58,6 +64,8 @@
         }
 
     </style>
+    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.4/dist/umd/popper.min.js"></script>
@@ -82,7 +90,19 @@
     <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
     <script src="assets/js/init/fullcalendar-init.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
 
+
+
+    <!-- DataTables JavaScript -->
+    <script src="<?php echo base_url('assets/')?>bower_components/DataTables/media/js/jquery.dataTables.min.js"></script>   
+
+    <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <script>
+    $(document).ready(function() {
+        $('#dataTables-example').DataTable();
+    });
+    </script>
     <!--Local Stuff-->
     <script>
         jQuery(document).ready(function($) {
@@ -93,6 +113,7 @@
                     return false;
                 }
             });
+           
             // Pie chart flotPie1
             var piedata = [
                 { label: "Desktop visits", data: [[1,32]], color: '#5c6bc0'},

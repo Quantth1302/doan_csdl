@@ -12,8 +12,7 @@
 			}
 			$data = array();
 			$data['pets'] = $this->Pet_model->getLastestPet();
-			$data['pets_sales'] = $this->Pet_model->getPetForSales();
-			$data['pets_sales_week'] = $this->Pet_model->getPetSaleForWeek();
+
 			$this->load->view('pages/'.$page, $data);
 		}
 	}

@@ -12,15 +12,15 @@
 						<div class="hover">
 							<h4>New to our website?</h4>
 							<p>There are advances being made in science and technology everyday, and a good example of this is the</p>
-							<a class="primary-btn" href="<?php echo base_url('create')?>">Create an Account</a>
+							<a class="primary-btn" href="<?php echo base_url('register')?>">Create an Account</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-lg-6">
 					<div class="login_form_inner">
 						<h3>Log in to enter</h3>
-						<form class="row login_form" action="" method="post" id="contactForm" novalidate="novalidate">
-							<div style=" font-weight: blod; text-align: center; width: 100%;">
+						<form class="row login_form" action="<?php echo base_url("login") ?>" method="post" id="contactForm" novalidate="novalidate">
+							<div style=" font-weight: blod; text-align: center; width: 100%; color:red;">
 								<?php echo form_error('login');?>
 							</div>
 							<div class="col-md-12 form-group">
@@ -31,8 +31,8 @@
 							</div>
 							<div class="col-md-12 form-group">
 								<div class="creat_account">
-									<input type="checkbox" id="f-option2" name="selector">
-									<label for="f-option2">Keep me logged in</label>
+									<input type="checkbox" id="f-option2" name="remember_me">
+									<label for="remember_me">Keep me logged in</label>
 								</div>
 							</div>
 							<div class="col-md-12 form-group">

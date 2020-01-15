@@ -7,6 +7,9 @@
 /* Wide Mobile Layout: 480px */
 /* Section Gaps css
 ============================================================================================ */
+body{
+  overflow-x:hidden;
+}
 .no-padding {
   padding: 0; }
 
@@ -1206,7 +1209,7 @@ h1, h2, h3, h4, h5, h6 {
 /* banner area css
 ============================================================================================ */
 .banner-area {
-  background: url(../img/banner/banner-bg.jpg) center no-repeat;
+  background: url(../img/pet/dog-banner1.jpg) center no-repeat;
   background-size: cover;
   position: relative; }
   @media (max-width: 768px) {
@@ -3999,9 +4002,9 @@ label {
     .product_count button:hover {
       color: #222222; }
   .product_count .increase {
-    top: -4px; }
+    top: -1px; }
   .product_count .reduced {
-    bottom: -8px; }
+    bottom: -1px; }
 
 .product_description_area {
   padding-bottom: 120px;
@@ -5808,4 +5811,31 @@ label {
 }
 .create__form__inner .custom-btn{
         padding: 0 50px;
+}
+.prev-arrow{
+  padding-top: 14px;
+}
+.next-arrow{
+  padding-top: 14px;
+}
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  transition-duration: 0.3s;
+  transition-property: transform;
+}
+.hvr-grow:hover{
+  transform: scale(1.1);
+}
+.img-custom {
+  max-width: 100%;
+  height: 270px !important;
+}
+.img-fluid_custom{
+  width: 100px;
+  height: 130px;
 }

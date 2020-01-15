@@ -4,8 +4,21 @@
         
     </head>
     <body>
+    <?php 
+            if ($role) {
+                foreach ($role as $r) {  
+                    $R = $r->role_id;
+                }
+            }                             
+        ?>       
         <aside id="left-panel" class="left-panel">
-            <?php $this->load->view('pages/admin/layout/left')?>
+            <?php
+            if($R == 0){
+                $this->load->view('pages/admin/layout/left');
+            }else{
+                $this->load->view('pages/admin/layout/leftEmployee');
+            }
+            ?>
         </aside>
         <div id="right-panel" class="right-panel">
             <header id="header" class="header">
@@ -59,8 +72,8 @@
                         Insert</button>
                         </a>
                     </div>
-                <div class="table-stats order-table ov-h">
-                <table class="table ">
+                <div class="table-stats order-table ov-h" >
+                <table class="table table-striped "id="dataTables-example">
                     <thead>
                         <tr>
                             <th class="serial">STT</th>

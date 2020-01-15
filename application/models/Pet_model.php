@@ -13,19 +13,20 @@ class Pet_model extends My_Model {
 
         return $query->result();
     }
+    public function getPetSale(){
+        $query = $this->db->query("SELECT * FROM pet WHERE sale_id != '' ");
 
-    public function getPetForSales() {
-        $query = $this->db->query("SELECT * FROM pet WHERE sale_id is not null");
         return $query->result();
     }
 
-    public function getPetSaleForWeek() {
-        $query = $this->db->query("SELECT pet.* FROM pet LEFT JOIN sales on sales.id = pet.sale_id WHERE WEEK(start_date) - WEEK(end_date) = 0");
-        return $query->result();
-    }
     public function delete_pet_id($id){
         $this->db->where('id',$id);
         $this->db->delete('pet');
+    }
+    public function getInfoPet($id){
+        $query = $this->db->query("SELECT * FROM pet WHERE id = '$id' ");
+
+        return $query->result();
     }
     
 }

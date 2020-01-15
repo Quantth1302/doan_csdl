@@ -2,18 +2,29 @@
 
 class Home extends My_Controller{
 
+    function __construct(){
+        parent:: __construct();
+        $this->load->model('User_model');   
+    }
+
     function index(){
-        
-        $this->load->view('pages/admin/home');
-    }
-
-    function logout(){
-
+        $data = array();
+        $data['role'] = $this->User_model->getRoleByUsername($this->session->userdata('login'));
+       
         if($this->session->userdata('login')){
-
-            $this->session->unset_userdata('login');// xoa bien login o trang admin
+            // if($Role == 0){
+                $this->load->view('pages/admin/home',$data,$this->data);
+            // }   
+            // else{
+            //     echo "Ban ko co quyen gi ca";
+            // }      
         }
-        redirect(base_url('login'));
+        else{
+            redirect(base_url('login'));
+        }
+        
     }
+
+   
 }
 ?>

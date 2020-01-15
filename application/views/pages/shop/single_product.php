@@ -24,54 +24,77 @@
 	<!-- End Banner Area -->
 
 	<!--================Single Product Area =================-->
+<?php
+		if($Pett){
+			foreach($Pett as $Pet){						
+	?>
 	<div class="product_image_area">
 		<div class="container">
 			<div class="row s_product_inner">
 				<div class="col-lg-6">
 					<div class="s_Product_carousel">
 						<div class="single-prd-item">
-							<img class="img-fluid" src="<?php echo base_url().'assets/img/category/s-p1.jpg' ?>" alt="">
+							<img class="img-fluid" src="<?php echo base_url()?>./assets/img/pet/<?php echo $Pet->image?>" alt="error">
 						</div>
 						<div class="single-prd-item">
-							<img class="img-fluid" src="<?php echo base_url().'assets/img/category/s-p1.jpg' ?>" alt="">
+							<img class="img-fluid" src="<?php echo base_url()?>./assets/img/pet/<?php echo $Pet->image?>" alt="image2">
 						</div>
 						<div class="single-prd-item">
-							<img class="img-fluid" src="<?php echo base_url().'assets/img/category/s-p1.jpg' ?>" alt="">
+							<img class="img-fluid" src="<?php echo base_url()?>./assets/img/pet/<?php echo $Pet->image?>" alt="image3">
 						</div>
+					
 					</div>
 				</div>
 				<div class="col-lg-5 offset-lg-1">
 					<div class="s_product_text">
-						<h3>Faded SkyBlu Denim Jeans</h3>
-						<h2>$149.99</h2>
+						<h3><?php echo $Pet->id;?></h3>
+						<h2><?php echo $Pet->price;?></h2>
 						<ul class="list">
-							<li><a class="active" href="#"><span>Category</span> : Household</a></li>
-							<li><a href="#"><span>Availibility</span> : In Stock</a></li>
+							
+							<li><a ><span>Species</span> : <?php if ($Pet->species_id==0){
+																	echo "Dog";
+																}
+																if ($Pet->species_id==1){
+																	echo "Cat";
+																}				
+																else{
+																	echo "Bird";
+																};?></a></li>
+							<li><a class="active" ><span>Gender</span> : <?php if ($Pet->gender==0){
+																					echo "Male";
+																					}else{
+																						echo "Female";
+																					};?></a>
+							</li>
 						</ul>
-						<p>Mill Oil is an innovative oil filled radiator with the most modern technology. If you are looking for
-							something that can make your interior look awesome, and at the same time give you the pleasant warm feeling
-							during the winter.</p>
-						<div class="product_count">
+						<p><?php echo $Pet->description;?></p>
+						<!-- <div class="product_count">
 							<label for="qty">Quantity:</label>
 							<input type="text" name="qty" id="sst" maxlength="12" value="1" title="Quantity:" class="input-text qty">
 							<button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst )) result.value++;return false;"
 							 class="increase items-count" type="button"><i class="lnr lnr-chevron-up"></i></button>
 							<button onclick="var result = document.getElementById('sst'); var sst = result.value; if( !isNaN( sst ) &amp;&amp; sst > 0 ) result.value--;return false;"
 							 class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
-						</div>
+						</div> -->
 						<div class="card_area d-flex align-items-center">
-							<a class="primary-btn" href="<?php echo base_url('cart/view')?>">Add to Cart</a>
-							<a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
-							<a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a>
+						<form action="" method="POST">
+							<button class="primary-btn" href="<?php echo base_url('shop/cart/'.$Pet->id)?>">Add to Cart</button>
+						</form>
+							<!-- <a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
+							<a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a> -->
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<?php
+			}
+		}
+	?>
 	<!--================End Single Product Area =================-->
 
-	<!--================Product Description Area =================-->
+	<!-- ================Product Description Area ================= -->
 	<section class="product_description_area">
 		<div class="container">
 			<ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -397,140 +420,7 @@
 	<!--================End Product Description Area =================-->
 
 	<!-- Start related-product Area -->
-	<section class="related-product-area section_gap_bottom">
-		<div class="container">
-			<div class="row justify-content-center">
-				<div class="col-lg-6 text-center">
-					<div class="section-title">
-						<h1>Deals of the Week</h1>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-							magna aliqua.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-lg-9">
-					<div class="row">
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="<?php echo base_url().'assets/img/r1.jpg'?>" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="<?php echo base_url().'assets/img/r2.jpg'?>" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="<?php echo base_url().'assets/img/r3.jpg'?>" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="<?php echo base_url().'assets/img/r5.jpg'?>" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="<?php echo base_url().'assets/img/r6.jpg'?>" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="<?php echo base_url().'assets/img/r7.jpg'?>" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="<?php echo base_url().'assets/img/r9.jpg'?>" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="<?php echo base_url().'assets/img/r10.jpg'?>" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-4 col-md-4 col-sm-6">
-							<div class="single-related-product d-flex">
-								<a href="#"><img src="<?php echo base_url().'assets/img/r11.jpg'?>" alt=""></a>
-								<div class="desc">
-									<a href="#" class="title">Black lace Heels</a>
-									<div class="price">
-										<h6>$189.00</h6>
-										<h6 class="l-through">$210.00</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3">
-					<div class="ctg-right">
-						<a href="#" target="_blank">
-							<img class="img-fluid d-block mx-auto" src="<?php echo base_url(). 'assets/img/category/c5.jpg'  ?>" alt="">
-						</a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+
 	<!-- End related-product Area -->
         <footer class="footer-area section_gap">
             <?php $this->load->view('pages/layout/footer');?>
