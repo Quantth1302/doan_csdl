@@ -25,7 +25,7 @@ class Login extends MY_Controller{
                 $this->form_validation->set_rules('login','Login','callback_check_login');
                 if($this->form_validation->run()){
 
-                    $info = $this->input->post('username');
+                    $info = $this->input->post('username');                   
                    
                     $this->session->set_userdata('login',$info);
 

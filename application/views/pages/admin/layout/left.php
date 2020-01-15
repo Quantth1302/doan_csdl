@@ -18,14 +18,14 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-user"></i>Employee</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-table"></i><a href="<?php echo base_url('admin/employee')?>">Employee list</a></li>
-                            <li><i class="fa fa-table"></i><a href="tables-data.html">...</a></li>
+                            
                         </ul>
                     </li>
                     <li class="menu-item-has-children dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Report</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-basic.html">Basic Form</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">Advanced Form</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url('admin/report')?>">Today</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">A week</a></li>
                         </ul>
                     </li>
                 </ul>

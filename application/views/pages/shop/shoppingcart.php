@@ -102,12 +102,7 @@
                                 <td>
 
                                 </td>
-                                <td>
-                                    <h5>Subtotal</h5>
-                                </td>
-                                <td>
-                                    <h5>$2160.00</h5>
-                                </td>
+                               
                             </tr>
                          
                             <tr class="out_button_area">

@@ -28,5 +28,10 @@ class Pet_model extends My_Model {
 
         return $query->result();
     }
+    public function getPetBuild(){
+        $query = $this->db->query("SELECT * FROM pet WHERE pet.tt = 1 ");
+
+        return $query->result();
+    }
     
 }

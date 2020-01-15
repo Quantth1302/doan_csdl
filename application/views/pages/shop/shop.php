@@ -75,7 +75,7 @@
 									</div>
 									<div class="prd-bottom">
 
-										<a href="" class="social-info">
+										<a href="<?php echo base_url('shop/cart/'.$p->id)?>" class="social-info">
 											<span class="ti-bag"></span>
 											<p class="hover-text">add to bag</p>
 										</a>
