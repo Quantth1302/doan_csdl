@@ -14,9 +14,19 @@ class Report extends MY_Controller{
         $data['build'] = $this->Pet_model->getPetBuild();
         $data['role'] = $this->User_model->getRoleByUsername($this->session->userdata('login'));
            
-        $this->load->view('pages/admin/report/today',$data+$this->data);
+        $this->load->view('pages/admin/report/today',$data);
         
     }
+
+    function rp(){
+        $data = array();
+        $data['rp'] = $this->Report_model->getInfoBill();
+        $data['role'] = $this->User_model->getRoleByUsername($this->session->userdata('login'));
+
+        $this->load->view('pages/admin/report/reportDetail',$data);
+       
+    }
+
 }
 
 ?>

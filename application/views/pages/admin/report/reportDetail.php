@@ -76,43 +76,31 @@
                 <table class="table table-striped "id="dataTables-example">
                     <thead>
                         <tr>
-                            <th class="serial">STT</th>
-                            <th class="avatar">Avatar</th>
-                            <th>ID</th>
-                            <th>Age</th>
-                            <th>Gender</th>
-                            <th>Price</th>
-                            <th>Status</th>
+                            <th class="serial">ID</th>
+                            <th class="avatar">Customer ID</th>
+                            <th>Employee ID</th>
+                            <th>Pet Id</th>
+                            <th>Total Price</th>
+                            <th>Create Time</th>
+                           
                         </tr>
                     </thead>
                     <tbody>
                         <?php 
-							if ($build) {
+							if ($rp) {
                                 $count = 1;
-                                $total =0;
-								foreach ($build as $p) {  
-                                    $total += $p->price;
-
+								foreach ($rp as $p) {                                
 						?>
                         <tr>
-                            <td class="serial"><?php echo $count++ ?></td>
-                            <td class="avatar">
-                                <div class="round-img">
-                                    <a href="#"><img class="rounded-circle" src="../assets/img/pet/<?php echo $p->image?>" alt=""></a>
-                                </div>
-                            </td>
-                            <td> <?php echo $p->id?> </td>
-                            <td>  <span class="age"><?php echo $p->age?></span> </td>
-                            <td> <span class="gender"><?php if($p->gender==1){
-                                echo "Male";
-                            }else{
-                                echo "Female";
-                            }?></span> </td>
-                            <td><span class="count"><?php echo $p->price?></span></td>
-                            <td>
-                                
-                                <a class="confirm" href="<?php echo base_url('admin/product/delete/'.$p->id)?>" ><span class="badge badge-pending hvr-grow">Delete</span></a>
-                            </td>
+                            <td class="serial"><?php echo $p->id ?></td>
+                            
+                            <td>  <span class="age"><?php echo $p->cus_name?></span></td>
+                            
+                            <td> <?php echo $p->em_name?> </td>
+                            <td>  <span class="age"><?php echo $p->pet_id?></span></td>
+                            <td> <span class="gender"><?php echo $p->total_price?></span> </td>
+                            <td><span class="count"><?php echo $p->created_time?></span></td>
+                          
                         </tr>
                         
                         <?php
@@ -120,9 +108,6 @@
                             }
                         ?>                                          
                     </tbody>
-                    </table>
-                    <table>
-                            <p style = "font-size: 30px; font-weight: 600; margin-left: 60%" >Total: <?php echo $total?></p>
                     </table>
                      </div> <!-- /.table-stats -->
                  <!-- </div> -->

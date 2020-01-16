@@ -25,7 +25,7 @@
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-th"></i>Report</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url('admin/report')?>">Today</a></li>
-                            <li><i class="menu-icon fa fa-th"></i><a href="forms-advanced.html">A week</a></li>
+                            <li><i class="menu-icon fa fa-th"></i><a href="<?php echo base_url('admin/report/rp')?>">Report Detail</a></li>
                         </ul>
                     </li>
                 </ul>
