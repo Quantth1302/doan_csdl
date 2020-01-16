@@ -118,7 +118,7 @@
                                 <td>
                                     <div class="checkout_btn_inner d-flex align-items-center">
                                         <a class="gray_btn" href="<?php echo base_url('shop')?>">Continue Shopping</a>
-                                        <a class="primary-btn" href="#">Proceed to checkout</a>
+                                        <a class="primary-btn" href="<?php echo base_url('cart/submit/'.$Pet->id)?>">Proceed to checkout</a>
                                     </div>
                                 </td>
                             </tr>

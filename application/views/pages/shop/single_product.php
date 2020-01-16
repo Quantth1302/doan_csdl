@@ -77,9 +77,9 @@
 							 class="reduced items-count" type="button"><i class="lnr lnr-chevron-down"></i></button>
 						</div> -->
 						<div class="card_area d-flex align-items-center">
-						<form action="" method="POST">
-							<button class="primary-btn" href="<?php echo base_url('shop/cart/'.$Pet->id)?>">Add to Cart</button>
-						</form>
+						
+							<a class="primary-btn" href="<?php echo base_url('shop/cart/'.$Pet->id)?>">Add to Cart</a>
+						
 							<!-- <a class="icon_btn" href="#"><i class="lnr lnr lnr-diamond"></i></a>
 							<a class="icon_btn" href="#"><i class="lnr lnr lnr-heart"></i></a> -->
 						</div>

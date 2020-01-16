@@ -16,5 +16,17 @@
 			$this->data['temp'] = 'cart/index';
             $this->load->view('pages/shop/shoppingcart',$this->data);
         }
+
+        function submit(){
+            $id = $this->uri->rsegment('3');
+			$id = strval($id);
+            if($this->Pet_model->UpDatePet($id)){
+                redirect(base_url('success'));
+            }
+            else{
+                $this->session->set_flashdata('message','Edit failed');
+            }
+
+        }
     }
 ?>
